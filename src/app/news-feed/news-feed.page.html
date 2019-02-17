@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>News Feed</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card color="light" mode="ios" *ngFor="let newsItem of newsArticles?.articles" (click)="goToNewsDetail(newsItem)">
+    <ion-img [src]="newsItem.urlToImage"></ion-img>
+    <!-- <ion-card-header>
+      <ion-card-subtitle>{{newsItem.title}}</ion-card-subtitle>
+      <ion-card-title>{{newsItem.title}}</ion-card-title>
+    </ion-card-header> -->
+  
+    <ion-card-content>
+        <ion-card-title>{{newsItem.title}}</ion-card-title>
+      <p>{{newsItem.description}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

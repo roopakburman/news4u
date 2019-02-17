@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Search News
+    </ion-title>
+  </ion-toolbar>
+  <!-- <ion-searchbar value="Ionic"></ion-searchbar> -->
+<!-- Animated Searchbar -->
+<ion-searchbar animated (ionChange)="getNews($event, value)"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-list>
+      <ion-item *ngFor="let item of items?.articles">
+        <ion-label>{{item.title}}</ion-label>
+      </ion-item>
+  </ion-list> -->
+<!--  (click)="goToNewsDetail(newsItem)" -->
+  <ion-card *ngFor="let item of newsDetail?.articles">
+      <ion-img [src]="item.image"></ion-img>
+      <ion-card-content>
+          <ion-card-title>{{item.title}}</ion-card-title>
+        <p>{{item.desc}}</p>
+      </ion-card-content>
+    </ion-card>
+</ion-content>
